@@ -10,9 +10,12 @@
   branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
   ci = commit -v
   co = checkout
+  mup = !git checkout && git pull && git checkout -
   pf = push --force-with-lease
   st = status
+  sla = log --oneline --decorate --graph --all
 [core]
+  editor = "atom --wait"
   excludesfile = ~/.gitignore
   autocrlf = input
 [merge]
@@ -25,3 +28,8 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[user]
+	email = pavan.sarguru@gamut.com
+	name = Pavan Sarguru
+[rerere]
+	enabled = true
